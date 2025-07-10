@@ -91,29 +91,19 @@ body {
   }
 }
 
-.microelements {
-  max-width: 145px;
-  width: 100%;
-  transform: translate(413%, -35%);
-}
-
-.probiotics {
-  max-width: 195px;
-  width: 100%;
-  transform: translate(-14%, 24%);
-}
-
+.microelements,
+.probiotics,
 .protein {
   position: absolute;
   max-width: 330px;
-  width: 100%;
-  transform: translate(85.5%, 36%);
-  z-index: 2;
+  transform-origin: center center;
+  left: 50%;
+  top: 50%;
 }
 
 .slide__info {
   position: relative;
-  transform: translate(4%, 76%);
+  transform: translate(4%, 183%);
   display: flex;
   flex-direction: column;
   gap: 22px;
@@ -131,7 +121,7 @@ body {
 }
 
 .slide__footer {
-  transform: translateY(485%);
+  transform: translateY(1079%);
   display: flex;
   align-items: center;
   gap: 11px;
