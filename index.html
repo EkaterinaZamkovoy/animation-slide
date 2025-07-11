@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animation Slide</title>
+    <script type="module" crossorigin src="/js/index.js"></script>
+    <link rel="stylesheet" crossorigin href="/sass/index.css">
+  </head>
+  <body>
+    <main class="slide-wrapper">
+      <header class="slide__header">
+        <p class="slide__note">
+          ИДЕАЛЬНОЙ ПИЩЕЙ ДЛЯ ГРУДНОГО РЕБЁНКА ЯВЛЯЕТСЯ МОЛОКО МАТЕРИ
+        </p>
+      </header>
+
+      <h1 class="slide__title">Экспертное решение для роста и развития</h1>
+
+      <section class="orbit" id="orbit">
+        <div class="banka-wrapper">
+          <img class="banka" src="/img/banka.png" alt="Банка" />
+        </div>
+        <img
+          src="/img/Microelements.svg"
+          alt="Микроэлементы"
+          class="microelements molecule molecule-medium"
+        />
+        <img
+          src="/img/Probiotics.svg"
+          alt="Пробиотики"
+          class="probiotics molecule molecule-small"
+        />
+        <img
+          src="/img/Protein.svg"
+          alt="Белок"
+          class="protein molecule molecule-medium"
+        />
+      </section>
+
+      <section class="slide__info">
+        <img src="/img/slide-info.svg" alt="инфо" />
+        <img src="/img/search-gold.png" alt="поиск" class="icon-search" />
+      </section>
+
+      <footer class="slide__footer">
+        <nav class="footer-nav">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD8AAAA4CAYAAABKWiBnAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAJKSURBVHgB7ZrhdYIwEMcPn991BDaoI9AN3KB2At1AOkHtBHUD3aBuYDsBboCd4Hp5wHuQBkgMCYHwey++p4TL/c8jyQEAPYKIIfgGiV5S+8KMqzdByIVfsUoy+gAwgblQEeMNQI3w0+gDUCN8kx9bU0u5AKxgDDAhnPC0EM71Sbk+ww6Aiqia7HiBIcIcV03nUQQgF46PTGQ1AdjDEGCOPiq8ZGN4AehCeMmWaDPkZgAEwpnjS9AAq9vggndwCeZQ18I5+0fO/ie4AHOEc+wIBiC7B26cU5cBVnVmif+3p0cwCNmPTWaYrBOiySgGCwgCkKCtegCzZagX4SUf7AcAxetvDD1A4+6sBaBG+A56hMbfGA8ANpSkfYMmK8Ia4xE4BIrL5jXowETiQOps7LIiRI3KrC+wi4KITtgOTXiBVgCww8qsL1C8F9m3ncQLH+wDBVQpidFASeoC2FARBnkH9sOmdM6N2ge1O2frEgTBDRwlz9JIcIj942Hp+5naq2if3ETqajbkaZ4oaDnMoBqRNphwV++nM99Chf5Pc/qIIUvvRUPHdW58KDA954bjv9QOIANW76NF4CCYLW8Ficw5M/CYSbyvzMEwdP1tIZswVWF7ijfoG50JD/WQXmHGOOEtwCDG057jWaIP22qHYAGr4ukavrT1oZQFW0xLna9M4n1lEu8rk3hfmcT7ylTPK7JHe+/Dsjew7pJ9lW+wPiI+AnvoPWNvQTbtf0Cfb8l+N9BHaqwAJMHsTQede/dnKmlbUxizR04rG2P9ATxXhXEELxUcAAAAAElFTkSuQmCC" alt="дом" class="icon" />
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAAyCAYAAADsg90UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAKXSURBVHgB7Zr9kdowEMUfmSuADnAHoYMoFYQOQioIHVw6CKmASwV3V4FJBaEDlAruOtjsjlYghD/A4DOJ9JvZkT9kafdZ1viPNyKiMYApjnnVwGg0svgH0drGelpU9bnjmHGsWgaSRsSw2m44/mi7YYFeMRCcW8GNgStwAvcyx6gpOMLe4XTClWKiJEQIy/EMJ8gGPRCs1k/a+mI7Ewvg3y504DCa8MnMNFHLzZrjmcV4wgXoG5ZxpWiD89h9xtGx8R1iAZ444S+oTsQvKx8f4IQxFd3l/lyCn5NJRYSfPPYaJ6BzfdWxTUt3i8NPUs5t3b6lgm7DC5KkZ4UO8HNTjgXHI8cL1bPluNckqsYxHCU185tjyTFToc7NtQjzuYoANYUsteA6VircWEWp6/uiosy7FIwhBIgmlCIfWgqsorxW0VE+bytANPmcmpe4iPHt2kVHOQwnQJTEY5gIuT2kt8KjuXfzvsMA6A79I7gku/ZyiB+qQQS4JbIASJwsABInC4DEyQIgcbIASJwsABInC4DEyQIgcbIASJwsABInC4DEyQIgcbIASJzkBYgtMuK6MNE1G7RiQ/E+okHdYSG0t+9409QEe6dYo8cpFqCqc4H6iXdicPyCE8WiR2jvFJN4j71FrhPn2OSq8CYpiQWws8xJXOwQ89ChU+xia1zIiA7dlDGx01JigsPl1oR3iB2JoZ9aqadrvv8xul9w8xnObVagHYu9W8zi0NjZz6dKzuBk1NZSUjNbcsaoQp81wb0yGG9xxljSd/oWzpKTodMcYiXH96ige6o3THmn2IJqLHY3CTk/TpsY1FK0uak33BUt5OGEwsUI2atTbFB0VSwqVkVJx/8g/y+6IvwyL5Ea5Hb8sR4XGIi/IkTmnoFhYa8AAAAASUVORK5CYII=" alt="книга" class="icon" />
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADkAAAA4CAYAAABHRFAgAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAALcSURBVHgB7ZqPdZswEMY/skDZoIzgDUonaDYoGzQb2BskncDpBHmdwMkESSfAG+BOcNU9RHPIwg76gwjx7717YGxL+u5OAiRlCAwR5eqQi0uHLMsOSEgGD7SgUtkXfSzQF9jBIl+0PSl7TC38LEpcqexBWUPubJWtMDe0uN2ZxrPwWtg5R+yUFUiNakSu7PZEIzfaAfmJ//P3d8qeB8pZIxXsZR0Rky03HA6o/62U3VvKrCePqm5MEyu9tAPvLUKn6asWgXx+gwhwuYbQJrpQ7eFmSu9qp9aG0AIxoHaQqFP0Ezru/3yeIzTUDijxvTlcv9lNbhESVeA19amQAEsfLREKI1W2SAi1T1QdO4SAo2Z4r0BC6HjwK+EL9R/Xkkaxg9onqTDR1F6bTRQ7qB3pJU4j7ZU+luIavwbtMQP069ijuFTBgU7kd3HtF+bFb3FewhWjg8/qHc/oSg1cMPLerZDIGEEY3S85XWXkXjBP5FRJgZFc4X2wF+dOkZR/+osF8l4i6QWLlPn+GQuERe7F5/DvbmGQg2MNF3yH6JiEuE92fVLeOkrMC+9bXCfyj7hWYl58E+dPcIXaid//KTGnlA36yGkUFmXqcSzUf5F3G3CMAjdBCwwA9adjKviiH9RlNDdIiKp/HcXp1J8lm3w6UrTDnKmoEBLqrzrVUw9CZJncRmjoeJYszHTg2+rODSdHXSowpycfYkfUIpCJO8pTf7TtUrdABGh4DfQ5tnNtQoMv36nyftDpJfdJhN5YKq7Jc8Qj+/6DRte3SSF0KJ34Gu8lKN9YDgtbkz1yXNZK/DaY0FH7eKh9QBjawNDt1eHjHu1Uyie076jc+ALDe3x+Krsz9/ZY6uPyv0bfA0Sv6/w1+dHoaOVn6ps+dY0GXI8UzL/b0ontMAP1eAn12nZmNMRMS7aDMK+tZpQqdaeGUqfuVFyELo2L0KVxEbo0PrRQLBFDaIWlooVW3ed/vvUXSbzNLmQAAAAASUVORK5CYII=" alt="поиск" class="icon" />
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAzCAYAAABxCePHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAEDSURBVHgB7ZbREYIwDEBTJ9AJ7AhsoCM4giM4AiO4gSN4TgBMoBvYEbpBTY7gCbQ9gsXzo+8u1x/6SKFNo8CDc67AYY1hlFIGpKCgcn0uGGuJ4OT8VBJJ5cIEs1lBAoaSJvDcAz+whalg2ufBMp4YOjZHBUQaB/rNVpxFJvP3jLY9H/kuNI8EVbnaa8FJR4w7H7QYJQSgUkCH68ZhIAX0xjmZ9MB1l9KMQuWxgQQSAwkkokq2qESERLJNIYEs+V4yvalZWiIiS34syftkjK+KFTAVvOmKyH2sfXMUdwEHaDuAHcY+8g6DUUN7b78bZZJcWWI5TETy2XIQFiUbmAstrVveC6Mt/Nfg7wCmAAAAAElFTkSuQmCC" alt="информация" class="icon" />
+        </nav>
+        <div class="footer-info">
+          <p>Информация только для медицинских работников</p>
+          <p>Только для внутреннего использования</p>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>
