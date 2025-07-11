@@ -1,4 +1,4 @@
-import '../sass/style.scss';
+import '../sass/index.scss';
 
 function scaleSlide() {
   const slide = document.querySelector('.slide-wrapper');
