@@ -1,3 +1,5 @@
+import '../sass/style.scss';
+
 function scaleSlide() {
   const slide = document.querySelector('.slide-wrapper');
   const slideWidth = 1024;
@@ -36,13 +38,7 @@ const rx = 300;
 const ry = 120;
 const rz = 220;
 
-const minSize = 145;
-const midSize = 195;
-const maxSize = 330;
-
 let angle = 0;
-
-const angleOffset = Math.PI / 2 - Math.PI / 6;
 
 function animate() {
   molecules.forEach((molecule, index) => {
@@ -89,7 +85,7 @@ function animate() {
   });
 
   angle += 0.02; // скорость вращения
-//   requestAnimationFrame(animate);
+  //   requestAnimationFrame(animate);
 }
 
 animate();
