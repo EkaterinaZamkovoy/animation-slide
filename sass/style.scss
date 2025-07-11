@@ -91,14 +91,21 @@ body {
   }
 }
 
-.microelements,
-.probiotics,
-.protein {
+.molecule {
   position: absolute;
+  transition: max-width 0.4s ease, z-index 0.4s ease;
+}
+
+.molecule-small {
+  max-width: 145px;
+}
+
+.molecule-medium {
+  max-width: 195px;
+}
+
+.molecule-large {
   max-width: 330px;
-  transform-origin: center center;
-  left: 50%;
-  top: 50%;
 }
 
 .slide__info {

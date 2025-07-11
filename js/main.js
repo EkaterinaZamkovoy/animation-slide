@@ -31,9 +31,10 @@ const orbit = document.getElementById('orbit');
 const centerX = orbit.offsetWidth / 2 + 90;
 const centerY = orbit.offsetHeight / 2 + 50;
 
-// радиусы
-const rx = 320;
-const ry = 130;
+// радиусы окружностей вращения
+const rx = 300;
+const ry = 120;
+const rz = 220;
 
 const minSize = 145;
 const midSize = 195;
@@ -41,12 +42,28 @@ const maxSize = 330;
 
 let angle = 0;
 
+const angleOffset = Math.PI / 2 - Math.PI / 6;
+
 function animate() {
   molecules.forEach((molecule, index) => {
-    const offset = (index * (Math.PI * 2)) / molecules.length; // равномерно распределить
-    const currentAngle = angle + offset;
+    const offsets = [
+      (5 * Math.PI) / 3, // probiotics
+      Math.PI, // microelements
+      Math.PI / 6, // protein
+    ];
+
+    const currentAngle = angle + offsets[index];
     const x = centerX + rx * Math.cos(currentAngle);
-    const y = centerY + ry * Math.sin(currentAngle);
+    const z = rz * Math.sin(currentAngle); // глубина
+    const y = centerY + ry * Math.sin(currentAngle) + z * 0.1;
+
+    // ✨ Наклон оси вращения: слева выше, справа ниже
+    const tiltFactor = 0.2;
+    const yTilt = tiltFactor * (x - centerX);
+    const yWithTilt = y + yTilt;
+
+    const depth = (z + rz) / (2 * rz);
+    const scale = 0.6 + depth * 1.3;
 
     // Угол в диапазоне [0, 2π]
     const normalizedAngle =
@@ -54,32 +71,59 @@ function animate() {
 
     const angleDeg = (normalizedAngle * 180) / Math.PI;
 
-    let size = midSize;
     let zIndex = 1;
 
-    if (angleDeg >= 200 && angleDeg <= 340) {
-      //   size = minSize;
+    if (angleDeg >= 190 && angleDeg <= 330) {
       zIndex = 0;
-    } else if (
-      (angleDeg >= 80 && angleDeg <= 100) ||
-      (angleDeg >= 260 && angleDeg <= 280)
-    ) {
-      //   size = midSize;
+    } else if (angleDeg >= 80 && angleDeg <= 100) {
       zIndex = 1;
     } else if (angleDeg >= 20 && angleDeg <= 160) {
-      //   size = maxSize;
       zIndex = 2;
     }
 
     molecule.style.position = 'absolute';
     molecule.style.left = `${x}px`;
-    molecule.style.top = `${y}px`;
-    molecule.style.maxWidth = `${size}px`;
+    molecule.style.top = `${yWithTilt}px`;
+    molecule.style.transform = `scale(${scale})`;
     molecule.style.zIndex = zIndex;
   });
 
-  angle += 0.01; // скорость вращения
-  requestAnimationFrame(animate);
+  angle += 0.02; // скорость вращения
+//   requestAnimationFrame(animate);
 }
 
 animate();
+
+// свайп (мышь и тач)
+let isDragging = false;
+let startX = 0;
+
+orbit.addEventListener('mousedown', (e) => {
+  isDragging = true;
+  startX = e.clientX;
+});
+document.addEventListener('mousemove', (e) => {
+  if (!isDragging) return;
+  const deltaX = e.clientX - startX;
+  angle -= deltaX * 0.005;
+  startX = e.clientX;
+  animate();
+});
+document.addEventListener('mouseup', () => {
+  isDragging = false;
+});
+
+orbit.addEventListener('touchstart', (e) => {
+  isDragging = true;
+  startX = e.touches[0].clientX;
+});
+orbit.addEventListener('touchmove', (e) => {
+  if (!isDragging) return;
+  const deltaX = e.touches[0].clientX - startX;
+  angle -= deltaX * 0.005;
+  startX = e.touches[0].clientX;
+  animate();
+});
+orbit.addEventListener('touchend', () => {
+  isDragging = false;
+});
