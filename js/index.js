@@ -1,9 +1,10 @@
 import '../sass/index.scss';
 
+const slideWidth = 1024;
+const slideHeight = 768;
+
 function scaleSlide() {
   const slide = document.querySelector('.slide-wrapper');
-  const slideWidth = 1024;
-  const slideHeight = 768;
 
   const windowWidth = window.innerWidth;
   const windowHeight = window.innerHeight;
@@ -41,6 +42,8 @@ const rz = 220;
 let angle = 0;
 
 function animate() {
+  const windowWidth = window.innerWidth;
+
   molecules.forEach((molecule, index) => {
     const offsets = [
       (5 * Math.PI) / 3, // probiotics
@@ -85,7 +88,10 @@ function animate() {
   });
 
   angle += 0.02; // скорость вращения
-  //   requestAnimationFrame(animate);
+
+  if (windowWidth > slideWidth) {
+    requestAnimationFrame(animate);
+  }
 }
 
 animate();
@@ -93,21 +99,6 @@ animate();
 // свайп (мышь и тач)
 let isDragging = false;
 let startX = 0;
-
-orbit.addEventListener('mousedown', (e) => {
-  isDragging = true;
-  startX = e.clientX;
-});
-document.addEventListener('mousemove', (e) => {
-  if (!isDragging) return;
-  const deltaX = e.clientX - startX;
-  angle -= deltaX * 0.005;
-  startX = e.clientX;
-  animate();
-});
-document.addEventListener('mouseup', () => {
-  isDragging = false;
-});
 
 orbit.addEventListener('touchstart', (e) => {
   isDragging = true;
