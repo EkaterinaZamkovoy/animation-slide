@@ -89,7 +89,7 @@ function animate() {
 
   angle += 0.02; // скорость вращения
 
-  if (windowWidth > slideWidth) {
+  if (navigator.maxTouchPoints === 0) {
     requestAnimationFrame(animate);
   }
 }
