@@ -42,21 +42,19 @@ const rz = 220;
 let angle = 0;
 
 function animate() {
-  const windowWidth = window.innerWidth;
-
   molecules.forEach((molecule, index) => {
     const offsets = [
-      (5 * Math.PI) / 3, // probiotics
-      Math.PI, // microelements
+      (5 * Math.PI) / 3, // microelements
+      Math.PI, // probiotics
       Math.PI / 6, // protein
     ];
 
     const currentAngle = angle + offsets[index];
     const x = centerX + rx * Math.cos(currentAngle);
     const z = rz * Math.sin(currentAngle); // глубина
-    const y = centerY + ry * Math.sin(currentAngle) + z * 0.1;
+    const y = centerY + ry * Math.sin(currentAngle);
 
-    // ✨ Наклон оси вращения: слева выше, справа ниже
+    // Наклон оси вращения: слева выше, справа ниже
     const tiltFactor = 0.2;
     const yTilt = tiltFactor * (x - centerX);
     const yWithTilt = y + yTilt;
@@ -74,8 +72,6 @@ function animate() {
 
     if (angleDeg >= 190 && angleDeg <= 330) {
       zIndex = 0;
-    } else if (angleDeg >= 80 && angleDeg <= 100) {
-      zIndex = 1;
     } else if (angleDeg >= 20 && angleDeg <= 160) {
       zIndex = 2;
     }
